@@ -11,8 +11,8 @@ import UIKit
 class MainViewController: UIViewController {
 
     var drawPath: UIBezierPath!
-    var eraserPath: UIBezierPath =  UIBezierPath()
-    var writingPath: UIBezierPath =  UIBezierPath()
+//    var eraserPath: UIBezierPath =  UIBezierPath()
+//    var writingPath: UIBezierPath =  UIBezierPath()
 
     @IBOutlet weak var boardView: UIView!
 
@@ -30,8 +30,8 @@ class MainViewController: UIViewController {
     var previousPoint: CGPoint?
 
     var shapeLayer: CAShapeLayer!
-    var eraserLayer: CAShapeLayer = CAShapeLayer()
-    var writingLayer: CAShapeLayer = CAShapeLayer()
+//    var eraserLayer: CAShapeLayer = CAShapeLayer()
+//    var writingLayer: CAShapeLayer = CAShapeLayer()
 
     var translationPoint: CGPoint? {
         didSet {
@@ -51,27 +51,24 @@ class MainViewController: UIViewController {
     @IBOutlet weak var toolBarView: UIView!
     @IBOutlet weak var eraserButton: UIButton!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Main"
-        //shapeLayer.frame = self.boardView.frame
-
+    fileprivate func setupShapeLayer() {
         //setup shapeLayer
-        shapeLayer = writingLayer
+        shapeLayer = CAShapeLayer()
         shapeLayer.strokeColor = strokeColor.cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineWidth = lineWidth
-        drawPath = writingPath
+        drawPath = UIBezierPath()
+    }
 
-        //setup eraserlayer
-        eraserLayer.fillColor = UIColor.clear.cgColor
-        eraserLayer.strokeColor = bgColor.cgColor
-        eraserLayer.lineWidth = 20
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Main"
+        setupShapeLayer()
 
         self.boardView.layer.addSublayer(shapeLayer)
-        self.boardView.layer.addSublayer(eraserLayer)
         self.boardView.layer.masksToBounds = true
         self.boardView.backgroundColor = bgColor
+        self.toolBarView.layer.zPosition = CGFloat(Int.max)
         addPanGestureTo(view: self.boardView)
 
     }
@@ -83,14 +80,24 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func eraserClicked(_ sender: Any) {
-        drawPath = eraserPath
-        shapeLayer = eraserLayer
+        drawPath = UIBezierPath()
+        let newlayer = CAShapeLayer()
+        newlayer.fillColor = UIColor.clear.cgColor
+        newlayer.strokeColor = bgColor.cgColor
+        newlayer.lineWidth = 20
+        self.boardView.layer.addSublayer(newlayer)
+        shapeLayer = newlayer
     }
 
     @IBAction func startWriting(_ sender: Any) {
-        drawPath = writingPath
-        shapeLayer = writingLayer
-        writingLayer.zPosition = 100
+        drawPath = UIBezierPath()
+        let newlayer = CAShapeLayer()
+        newlayer.fillColor = UIColor.clear.cgColor
+        newlayer.strokeColor = strokeColor.cgColor
+        newlayer.lineWidth = 3
+        newlayer.lineCap = CAShapeLayerLineCap.round
+        self.boardView.layer.addSublayer(newlayer)
+        shapeLayer = newlayer
     }
     
     @objc func handlePan(sender: UIPanGestureRecognizer) {
