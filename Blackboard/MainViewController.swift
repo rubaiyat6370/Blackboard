@@ -11,8 +11,8 @@ import UIKit
 class MainViewController: UIViewController {
 
     var drawPath: UIBezierPath!
-//    var eraserPath: UIBezierPath =  UIBezierPath()
-//    var writingPath: UIBezierPath =  UIBezierPath()
+
+    var layers = [CAShapeLayer]()
 
     @IBOutlet weak var boardView: UIView!
 
@@ -29,22 +29,22 @@ class MainViewController: UIViewController {
 
     var previousPoint: CGPoint?
 
-    var shapeLayer: CAShapeLayer!
-//    var eraserLayer: CAShapeLayer = CAShapeLayer()
-//    var writingLayer: CAShapeLayer = CAShapeLayer()
+    var currentLayer: CAShapeLayer!
 
     var translationPoint: CGPoint? {
         didSet {
             if let point = translationPoint {
                 self.drawPath.addLine(to: point)
-                self.shapeLayer.path = self.drawPath.cgPath
+                self.currentLayer.path = self.drawPath.cgPath
                 previousPoint = point
                 print(point)
             }
         }
     }
 
-    var lineWidth: CGFloat = 3.0
+    var mode = 1 // 1 for writing
+    var lineWidth: CGFloat = 5.0
+    var eraserLineWidth: CGFloat = 30
     var strokeColor: UIColor = .white
     var bgColor: UIColor = .black
 
@@ -53,10 +53,11 @@ class MainViewController: UIViewController {
 
     fileprivate func setupShapeLayer() {
         //setup shapeLayer
-        shapeLayer = CAShapeLayer()
-        shapeLayer.strokeColor = strokeColor.cgColor
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.lineWidth = lineWidth
+        currentLayer = CAShapeLayer()
+        layers.append(currentLayer)
+        currentLayer.strokeColor = strokeColor.cgColor
+        currentLayer.fillColor = UIColor.clear.cgColor
+        currentLayer.lineWidth = lineWidth
         drawPath = UIBezierPath()
     }
 
@@ -65,7 +66,7 @@ class MainViewController: UIViewController {
         title = "Main"
         setupShapeLayer()
 
-        self.boardView.layer.addSublayer(shapeLayer)
+        self.boardView.layer.addSublayer(currentLayer)
         self.boardView.layer.masksToBounds = true
         self.boardView.backgroundColor = bgColor
         self.toolBarView.layer.zPosition = CGFloat(Int.max)
@@ -73,31 +74,37 @@ class MainViewController: UIViewController {
 
     }
 
+    //mode == 1 : writing mode
+    func createNewLayer(_ mode:Int) {
+        //setup shapeLayer
+        currentLayer = CAShapeLayer()
+        currentLayer.strokeColor = mode == 1 ? strokeColor.cgColor : bgColor.cgColor
+        currentLayer.fillColor = UIColor.clear.cgColor
+        currentLayer.lineWidth = mode == 1 ? lineWidth : eraserLineWidth // ( 30 for erase mode )
+        self.boardView.layer.addSublayer(currentLayer)
+        layers.append(currentLayer)
+
+        drawPath = UIBezierPath()
+    }
+
     func addPanGestureTo(view: UIView) {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(sender:)))
-        //panGesture.delegate = self
         view.addGestureRecognizer(panGesture)
     }
 
     @IBAction func eraserClicked(_ sender: Any) {
-        drawPath = UIBezierPath()
-        let newlayer = CAShapeLayer()
-        newlayer.fillColor = UIColor.clear.cgColor
-        newlayer.strokeColor = bgColor.cgColor
-        newlayer.lineWidth = 20
-        self.boardView.layer.addSublayer(newlayer)
-        shapeLayer = newlayer
+        mode = 0
     }
 
     @IBAction func startWriting(_ sender: Any) {
-        drawPath = UIBezierPath()
-        let newlayer = CAShapeLayer()
-        newlayer.fillColor = UIColor.clear.cgColor
-        newlayer.strokeColor = strokeColor.cgColor
-        newlayer.lineWidth = 3
-        newlayer.lineCap = CAShapeLayerLineCap.round
-        self.boardView.layer.addSublayer(newlayer)
-        shapeLayer = newlayer
+        mode = 1
+    }
+   
+    @IBAction func undoWriting(_ sender: Any) {
+        if !layers.isEmpty {
+            layers.last?.removeFromSuperlayer()
+            layers.removeLast()
+        }
     }
     
     @objc func handlePan(sender: UIPanGestureRecognizer) {
@@ -107,7 +114,23 @@ class MainViewController: UIViewController {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        createNewLayer(mode)
         startPoint = touches.first?.location(in: self.boardView)
+        print("began")
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let translation = touches.first?.location(in: self.boardView) {
+            translationPoint = CGPoint(x: translation.x, y: translation.y)
+            print("moved")
+        }
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let translation = touches.first?.location(in: self.boardView) {
+            translationPoint = CGPoint(x: translation.x, y: translation.y)
+            print("ended")
+        }
     }
 
 }

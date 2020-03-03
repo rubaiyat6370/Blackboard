@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -13,44 +13,63 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Blackboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JjQ-8p-Tmc">
-                                <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1346"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ns3-DY-kSZ">
-                                        <rect key="frame" x="315" y="8" width="91" height="250"/>
+                                        <rect key="frame" x="925" y="8" width="91" height="250"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlI-Wj-qpR">
-                                                <rect key="frame" x="24" y="15" width="43" height="33"/>
-                                                <color key="backgroundColor" red="0.93333333330000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="Erase">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlI-Wj-qpR">
+                                                <rect key="frame" x="8" y="8" width="75" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="N9v-si-9mA"/>
+                                                </constraints>
+                                                <state key="normal" title="Erase" image="eraser">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="eraserClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DVi-ma-SQA"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6t0-7c-kgz">
-                                                <rect key="frame" x="25" y="63" width="41" height="33"/>
-                                                <color key="backgroundColor" red="0.93333333330000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="Write">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6t0-7c-kgz">
+                                                <rect key="frame" x="8" y="86" width="75" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="X8J-BJ-Xe6"/>
+                                                </constraints>
+                                                <state key="normal" title="Write" image="chalk">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="startWriting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="58z-uC-fSd"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhH-CW-Alv">
+                                                <rect key="frame" x="8" y="164" width="75" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="DsA-1a-1EX"/>
+                                                </constraints>
+                                                <state key="normal" title="Undo" image="undo">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="undoWriting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ncr-sj-mCN"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="6t0-7c-kgz" firstAttribute="top" secondItem="rlI-Wj-qpR" secondAttribute="bottom" constant="15" id="QfT-Eu-DTf"/>
-                                            <constraint firstItem="6t0-7c-kgz" firstAttribute="centerX" secondItem="ns3-DY-kSZ" secondAttribute="centerX" id="ai5-Ib-HQ9"/>
-                                            <constraint firstItem="rlI-Wj-qpR" firstAttribute="top" secondItem="ns3-DY-kSZ" secondAttribute="top" constant="15" id="cEh-bT-VfL"/>
-                                            <constraint firstItem="rlI-Wj-qpR" firstAttribute="centerX" secondItem="ns3-DY-kSZ" secondAttribute="centerX" id="cZK-UY-FDO"/>
+                                            <constraint firstAttribute="trailing" secondItem="6t0-7c-kgz" secondAttribute="trailing" constant="8" id="B4u-J9-mr7"/>
+                                            <constraint firstItem="rlI-Wj-qpR" firstAttribute="leading" secondItem="ns3-DY-kSZ" secondAttribute="leading" constant="8" id="Fcu-7o-hgs"/>
+                                            <constraint firstItem="nhH-CW-Alv" firstAttribute="leading" secondItem="ns3-DY-kSZ" secondAttribute="leading" constant="8" id="NGh-Hu-Ldj"/>
+                                            <constraint firstAttribute="trailing" secondItem="nhH-CW-Alv" secondAttribute="trailing" constant="8" id="PlM-cd-IAA"/>
+                                            <constraint firstItem="6t0-7c-kgz" firstAttribute="top" secondItem="rlI-Wj-qpR" secondAttribute="bottom" constant="8" id="Ro9-t5-WPN"/>
+                                            <constraint firstAttribute="trailing" secondItem="rlI-Wj-qpR" secondAttribute="trailing" constant="8" id="WAc-t9-R3y"/>
+                                            <constraint firstItem="rlI-Wj-qpR" firstAttribute="top" secondItem="ns3-DY-kSZ" secondAttribute="top" constant="8" id="Xbu-wk-0Ko"/>
+                                            <constraint firstItem="nhH-CW-Alv" firstAttribute="top" secondItem="6t0-7c-kgz" secondAttribute="bottom" constant="8" id="aBd-dR-iFH"/>
+                                            <constraint firstItem="6t0-7c-kgz" firstAttribute="leading" secondItem="ns3-DY-kSZ" secondAttribute="leading" constant="8" id="f4f-fV-sVo"/>
                                             <constraint firstAttribute="height" constant="250" id="jxT-Hu-iBi"/>
                                             <constraint firstAttribute="width" constant="91" id="ytO-Vm-Z6n"/>
                                         </constraints>
@@ -65,10 +84,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JjQ-8p-Tmc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Yjr-Sm-DT3"/>
+                            <constraint firstItem="JjQ-8p-Tmc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y6d-yA-uuY"/>
+                            <constraint firstItem="JjQ-8p-Tmc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Yjr-Sm-DT3"/>
                             <constraint firstItem="JjQ-8p-Tmc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ili-3d-jyg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JjQ-8p-Tmc" secondAttribute="bottom" id="itw-tC-fyM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JjQ-8p-Tmc" secondAttribute="trailing" id="tkd-Dg-7Lt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -81,7 +100,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="115.84821428571428"/>
+            <point key="canvasLocation" x="1046.6517857142858" y="114.49275362318842"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chalk" width="128" height="128"/>
+        <image name="eraser" width="150" height="150"/>
+        <image name="undo" width="256" height="256"/>
+    </resources>
 </document>
