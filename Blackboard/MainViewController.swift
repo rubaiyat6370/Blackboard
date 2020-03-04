@@ -51,26 +51,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var toolBarView: UIView!
     @IBOutlet weak var eraserButton: UIButton!
 
-    fileprivate func setupShapeLayer() {
-        //setup shapeLayer
-        currentLayer = CAShapeLayer()
-        layers.append(currentLayer)
-        currentLayer.strokeColor = strokeColor.cgColor
-        currentLayer.fillColor = UIColor.clear.cgColor
-        currentLayer.lineWidth = lineWidth
-        drawPath = UIBezierPath()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Main"
-        setupShapeLayer()
-
-        self.boardView.layer.addSublayer(currentLayer)
         self.boardView.layer.masksToBounds = true
         self.boardView.backgroundColor = bgColor
         self.toolBarView.layer.zPosition = CGFloat(Int.max)
-        addPanGestureTo(view: self.boardView)
+        addPanGestureTo(view: self.toolBarView)
 
     }
 
@@ -81,6 +68,7 @@ class MainViewController: UIViewController {
         currentLayer.strokeColor = mode == 1 ? strokeColor.cgColor : bgColor.cgColor
         currentLayer.fillColor = UIColor.clear.cgColor
         currentLayer.lineWidth = mode == 1 ? lineWidth : eraserLineWidth // ( 30 for erase mode )
+        currentLayer.lineCap = .round
         self.boardView.layer.addSublayer(currentLayer)
         layers.append(currentLayer)
 
@@ -109,26 +97,34 @@ class MainViewController: UIViewController {
     
     @objc func handlePan(sender: UIPanGestureRecognizer) {
         let translation  = sender.translation(in: self.boardView)
-        translationPoint = CGPoint(x: previousPoint!.x + translation.x, y: previousPoint!.y + translation.y)
+        let toolView = sender.view
+        toolView?.center = CGPoint(x: toolView!.center.x + translation.x, y: toolView!.center.y + translation.y)
         sender.setTranslation(CGPoint.zero, in: self.boardView)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        createNewLayer(mode)
-        startPoint = touches.first?.location(in: self.boardView)
+        if let point = touches.first?.location(in: self.boardView) {
+            if toolBarView.frame.contains(point) {
+                return
+            }
+            createNewLayer(mode)
+            startPoint = point
+        }
+
         print("began")
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let translation = touches.first?.location(in: self.boardView) {
-            translationPoint = CGPoint(x: translation.x, y: translation.y)
+        if let point = touches.first?.location(in: self.boardView) {
+            translationPoint = point
             print("moved")
+
         }
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let translation = touches.first?.location(in: self.boardView) {
-            translationPoint = CGPoint(x: translation.x, y: translation.y)
+        if let point = touches.first?.location(in: self.boardView) {
+            translationPoint = point
             print("ended")
         }
     }

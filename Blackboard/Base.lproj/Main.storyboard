@@ -19,7 +19,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JjQ-8p-Tmc">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1346"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ns3-DY-kSZ">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ns3-DY-kSZ" customClass="customToolbarView" customModule="Blackboard" customModuleProvider="target">
                                         <rect key="frame" x="925" y="8" width="91" height="250"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlI-Wj-qpR">

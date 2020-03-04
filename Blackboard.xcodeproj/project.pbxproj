@@ -15,6 +15,7 @@
 		BF7E9136240712200024968A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7E9134240712200024968A /* LaunchScreen.storyboard */; };
 		BF7E9141240712210024968A /* BlackboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E9140240712210024968A /* BlackboardTests.swift */; };
 		BF7E914C240712210024968A /* BlackboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E914B240712210024968A /* BlackboardUITests.swift */; };
+		BF7E915A240E8FFA0024968A /* customToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E9159240E8FFA0024968A /* customToolbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		BF7E9147240712210024968A /* BlackboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlackboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7E914B240712210024968A /* BlackboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackboardUITests.swift; sourceTree = "<group>"; };
 		BF7E914D240712210024968A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF7E9159240E8FFA0024968A /* customToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customToolbarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				BF7E9134240712200024968A /* LaunchScreen.storyboard */,
 				BF7E9137240712200024968A /* Info.plist */,
 				BF7E912F2407121F0024968A /* Blackboard.xcdatamodeld */,
+				BF7E9159240E8FFA0024968A /* customToolbarView.swift */,
 			);
 			path = Blackboard;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				BF7E91312407121F0024968A /* Blackboard.xcdatamodeld in Sources */,
 				BF7E912B2407121F0024968A /* MainViewController.swift in Sources */,
 				BF7E91272407121F0024968A /* AppDelegate.swift in Sources */,
+				BF7E915A240E8FFA0024968A /* customToolbarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
