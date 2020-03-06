@@ -104,9 +104,6 @@ class MainViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let point = touches.first?.location(in: self.boardView) {
-            if toolBarView.frame.contains(point) {
-                return
-            }
             createNewLayer(mode)
             startPoint = point
         }
@@ -129,6 +126,11 @@ class MainViewController: UIViewController {
         }
     }
 
+    @IBAction func settingsClicked(_ sender: Any) {
+        let settings = SettingsView(frame: UIScreen.main.bounds)
+        settings.center = view.center
+        self.view.addSubview(settings)
+    }
 }
 //
 //extension MainViewController: UIGestureRecognizerDelegate {
