@@ -12,11 +12,8 @@ import UIKit
 class SettingsView: UIView {
 
     @IBOutlet weak var view: UIView!
-
     @IBOutlet weak var scrollview: UIScrollView!
-
     @IBOutlet weak var displayView: UIView!
-
     @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var lineWidthSlider: UISlider!
 
@@ -79,11 +76,7 @@ class SettingsView: UIView {
     }
     
     func drawPreview() {
-//        print(drawingBox.bgColor)
-//        print(drawingBox.pencilColor)
-//        print(drawingBox.pencilOpacity)
-//        print(drawingBox.pencitWidth)
-//        print("**********************")
+
         UIGraphicsBeginImageContext(previewImageView.frame.size)
         guard let context = UIGraphicsGetCurrentContext() else {
           return
