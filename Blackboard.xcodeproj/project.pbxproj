@@ -20,6 +20,9 @@
 		BF7E918224115B3F0024968A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E918124115B3F0024968A /* SettingsView.swift */; };
 		BF7E9184241161160024968A /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E9183241161160024968A /* SettingsView.xib */; };
 		BF7E91882411A7A40024968A /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E91872411A7A40024968A /* TestView.xib */; };
+		BF7E918B24168A6A0024968A /* DrawingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E918A24168A6A0024968A /* DrawingBox.swift */; };
+		BF7E918D24168B390024968A /* DrawingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E918C24168B390024968A /* DrawingProtocol.swift */; };
+		BF7E918F2416E0530024968A /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E918E2416E0530024968A /* ColorButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		BF7E918124115B3F0024968A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BF7E9183241161160024968A /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		BF7E91872411A7A40024968A /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
+		BF7E918A24168A6A0024968A /* DrawingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingBox.swift; sourceTree = "<group>"; };
+		BF7E918C24168B390024968A /* DrawingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingProtocol.swift; sourceTree = "<group>"; };
+		BF7E918E2416E0530024968A /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 		BF7E91252407121F0024968A /* Blackboard */ = {
 			isa = PBXGroup;
 			children = (
+				BF7E918924168A370024968A /* Models */,
 				BF7E917C2410402D0024968A /* Exensions */,
 				BF7E91262407121F0024968A /* AppDelegate.swift */,
 				BF7E912A2407121F0024968A /* MainViewController.swift */,
@@ -157,6 +164,16 @@
 				BF7E91872411A7A40024968A /* TestView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BF7E918924168A370024968A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF7E918A24168A6A0024968A /* DrawingBox.swift */,
+				BF7E918C24168B390024968A /* DrawingProtocol.swift */,
+				BF7E918E2416E0530024968A /* ColorButton.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +314,9 @@
 				BF7E912B2407121F0024968A /* MainViewController.swift in Sources */,
 				BF7E918224115B3F0024968A /* SettingsView.swift in Sources */,
 				BF7E91272407121F0024968A /* AppDelegate.swift in Sources */,
+				BF7E918B24168A6A0024968A /* DrawingBox.swift in Sources */,
+				BF7E918F2416E0530024968A /* ColorButton.swift in Sources */,
+				BF7E918D24168B390024968A /* DrawingProtocol.swift in Sources */,
 				BF7E915A240E8FFA0024968A /* customToolbarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

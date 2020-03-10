@@ -21,7 +21,7 @@ class customToolbarView: UIView {
     func setupView() {
         layer.cornerRadius = 10
         layer.masksToBounds = true
-        layer.opacity = 0.5
+        layer.opacity = 1
         backgroundColor = .gray
     }
 

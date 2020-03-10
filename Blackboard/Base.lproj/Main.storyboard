@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -13,14 +13,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Blackboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JjQ-8p-Tmc">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="136" y="0.0" width="531" height="375"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ns3-DY-kSZ" customClass="customToolbarView" customModule="Blackboard" customModuleProvider="target">
-                                        <rect key="frame" x="276" y="8" width="91" height="250"/>
+                                        <rect key="frame" x="432" y="8" width="91" height="312"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlI-Wj-qpR">
                                                 <rect key="frame" x="8" y="8" width="75" height="70"/>
@@ -58,49 +58,233 @@
                                                     <action selector="undoWriting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ncr-sj-mCN"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLF-ap-dyr">
+                                                <rect key="frame" x="8" y="242" width="75" height="62"/>
+                                                <state key="normal" image="settingsIcon">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="settingsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DlC-pr-gmU"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="6t0-7c-kgz" secondAttribute="trailing" constant="8" id="B4u-J9-mr7"/>
-                                            <constraint firstItem="rlI-Wj-qpR" firstAttribute="leading" secondItem="ns3-DY-kSZ" secondAttribute="leading" constant="8" id="Fcu-7o-hgs"/>
-                                            <constraint firstItem="nhH-CW-Alv" firstAttribute="leading" secondItem="ns3-DY-kSZ" secondAttribute="leading" constant="8" id="NGh-Hu-Ldj"/>
-                                            <constraint firstAttribute="trailing" secondItem="nhH-CW-Alv" secondAttribute="trailing" constant="8" id="PlM-cd-IAA"/>
+                                            <constraint firstItem="nhH-CW-Alv" firstAttribute="top" secondItem="6t0-7c-kgz" secondAttribute="bottom" constant="8" id="0mz-rn-v3n"/>
+                                            <constraint firstAttribute="height" constant="312" id="1NC-20-ZHL"/>
+                                            <constraint firstAttribute="trailing" secondItem="nhH-CW-Alv" secondAttribute="trailing" constant="8" id="CdT-Wj-uRJ"/>
+                                            <constraint firstItem="6t0-7c-kgz" firstAttribute="top" secondItem="rlI-Wj-qpR" secondAttribute="bottom" constant="8" id="FRz-b0-pBU"/>
+                                            <constraint firstAttribute="width" constant="91" id="JC7-VU-KqL"/>
+                                            <constraint firstItem="GLF-ap-dyr" firstAttribute="leading" secondItem="ns3-DY-kSZ" secondAttribute="leading" constant="8" id="Q38-VR-c2A"/>
                                             <constraint firstItem="6t0-7c-kgz" firstAttribute="top" secondItem="rlI-Wj-qpR" secondAttribute="bottom" constant="8" id="Ro9-t5-WPN"/>
-                                            <constraint firstAttribute="trailing" secondItem="rlI-Wj-qpR" secondAttribute="trailing" constant="8" id="WAc-t9-R3y"/>
-                                            <constraint firstItem="rlI-Wj-qpR" firstAttribute="top" secondItem="ns3-DY-kSZ" secondAttribute="top" constant="8" id="Xbu-wk-0Ko"/>
+                                            <constraint firstItem="nhH-CW-Alv" firstAttribute="leading" secondItem="ns3-DY-kSZ" secondAttribute="leading" constant="8" id="W2L-OY-i2V"/>
                                             <constraint firstItem="nhH-CW-Alv" firstAttribute="top" secondItem="6t0-7c-kgz" secondAttribute="bottom" constant="8" id="aBd-dR-iFH"/>
-                                            <constraint firstItem="6t0-7c-kgz" firstAttribute="leading" secondItem="ns3-DY-kSZ" secondAttribute="leading" constant="8" id="f4f-fV-sVo"/>
-                                            <constraint firstAttribute="height" constant="250" id="jxT-Hu-iBi"/>
-                                            <constraint firstAttribute="width" constant="91" id="ytO-Vm-Z6n"/>
+                                            <constraint firstAttribute="trailing" secondItem="6t0-7c-kgz" secondAttribute="trailing" constant="8" id="bOo-To-GYV"/>
+                                            <constraint firstItem="rlI-Wj-qpR" firstAttribute="leading" secondItem="ns3-DY-kSZ" secondAttribute="leading" constant="8" id="fS9-cU-gPR"/>
+                                            <constraint firstAttribute="bottom" secondItem="GLF-ap-dyr" secondAttribute="bottom" constant="8" id="gYq-ht-RKl"/>
+                                            <constraint firstAttribute="trailing" secondItem="GLF-ap-dyr" secondAttribute="trailing" constant="8" id="gtJ-Dr-45I"/>
+                                            <constraint firstAttribute="trailing" secondItem="rlI-Wj-qpR" secondAttribute="trailing" constant="8" id="jYd-mv-MYL"/>
+                                            <constraint firstItem="rlI-Wj-qpR" firstAttribute="top" secondItem="ns3-DY-kSZ" secondAttribute="top" constant="8" id="nOL-3M-4NY"/>
+                                            <constraint firstItem="6t0-7c-kgz" firstAttribute="leading" secondItem="ns3-DY-kSZ" secondAttribute="leading" constant="8" id="whj-dH-ee0"/>
+                                            <constraint firstItem="GLF-ap-dyr" firstAttribute="top" secondItem="nhH-CW-Alv" secondAttribute="bottom" constant="8" id="yw9-sC-nAW"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLF-ap-dyr">
-                                        <rect key="frame" x="287" y="289" width="57" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="rRD-1J-uBE"/>
-                                        </constraints>
-                                        <state key="normal" title="Settings">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="settingsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DlC-pr-gmU"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ns3-DY-kSZ" secondAttribute="trailing" constant="8" id="bMJ-Uu-k3A"/>
-                                    <constraint firstItem="GLF-ap-dyr" firstAttribute="top" secondItem="ns3-DY-kSZ" secondAttribute="bottom" constant="31" id="gMp-cA-DDO"/>
-                                    <constraint firstItem="ns3-DY-kSZ" firstAttribute="top" secondItem="JjQ-8p-Tmc" secondAttribute="top" constant="8" id="gfn-oL-Rl9"/>
-                                    <constraint firstAttribute="trailing" secondItem="GLF-ap-dyr" secondAttribute="trailing" constant="31" id="zZf-VX-57H"/>
+                                    <constraint firstAttribute="trailing" secondItem="ns3-DY-kSZ" secondAttribute="trailing" constant="8" id="COZ-K8-Dtj"/>
+                                    <constraint firstItem="ns3-DY-kSZ" firstAttribute="top" secondItem="JjQ-8p-Tmc" secondAttribute="top" constant="8" id="aid-ee-VFe"/>
                                 </constraints>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bpa-Xz-rJ1">
+                                <rect key="frame" x="8" y="8" width="120" height="359"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KS6-33-lVp">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="500"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Lyv-da-ohR">
+                                                <rect key="frame" x="0.0" y="0.0" width="56" height="500"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ft7-zR-jmO" customClass="ColorButton" customModule="Blackboard" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="78.5"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                                        </accessibility>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="29"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="blackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OJ6-sZ-DGT"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgs-oO-fng" customClass="ColorButton" customModule="Blackboard" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="84.5" width="56" height="78"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="blueButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k1s-Fe-HlI"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsY-jJ-CSL" customClass="ColorButton" customModule="Blackboard" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="168.5" width="56" height="78.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" red="0.21026445129999999" green="0.99991412940000002" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="greenPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JW2-0t-KZB"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoT-yQ-fuX" customClass="ColorButton" customModule="Blackboard" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="253" width="56" height="78.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="redPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OhW-mz-Ogb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGh-TY-wYq" customClass="ColorButton" customModule="Blackboard" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="337.5" width="56" height="78"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="indigoPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a6U-2N-FDk"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtS-4u-NYv" customClass="ColorButton" customModule="Blackboard" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="421.5" width="56" height="78.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" red="1" green="0.5315217438070422" blue="0.36071958711690139" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="peachPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nyn-Z9-QWH"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="s7J-dx-GC9">
+                                                <rect key="frame" x="64" y="0.0" width="56" height="500"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPa-Rf-jYK" customClass="ColorButton" customModule="Blackboard" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="77.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="whitePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lm5-8B-3pR"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZ1-bF-pwC" customClass="ColorButton" customModule="Blackboard" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="84.5" width="56" height="77.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="yellowPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zQR-hw-Xjr"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78F-6R-boJ" customClass="ColorButton" customModule="Blackboard" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="169" width="56" height="77.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" red="0.68300096226478879" green="0.14471453419014083" blue="0.79989061206056333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="purplePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LYm-c7-I0O"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8o-Sy-Gtv" customClass="ColorButton" customModule="Blackboard" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="253.5" width="56" height="77.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="orangePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3pr-gm-p5O"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5O-6M-azv" customClass="ColorButton" customModule="Blackboard" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="338" width="56" height="77.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" red="1" green="0.1764705882" blue="0.73636480337042243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="pinkPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pmy-AX-Q9w"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rn-eI-nPf" customClass="ColorButton" customModule="Blackboard" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="422.5" width="56" height="77.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" red="0.20392156859999999" green="0.45234968330845066" blue="0.00029051449014086135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="darkGreenPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VD1-fv-VxT"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="7d8-lE-1Vl"/>
+                                            <constraint firstAttribute="height" constant="500" id="CfY-j8-QJC"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.73557621772300463" alpha="0.25676716549295764" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="KS6-33-lVp" firstAttribute="width" secondItem="Bpa-Xz-rJ1" secondAttribute="width" id="H6L-K0-RHh"/>
+                                    <constraint firstAttribute="bottom" secondItem="KS6-33-lVp" secondAttribute="bottom" priority="250" id="H6S-1z-wAu"/>
+                                    <constraint firstItem="KS6-33-lVp" firstAttribute="leading" secondItem="Bpa-Xz-rJ1" secondAttribute="leading" id="PgM-Ao-3uh"/>
+                                    <constraint firstItem="KS6-33-lVp" firstAttribute="top" secondItem="Bpa-Xz-rJ1" secondAttribute="top" id="ZjX-fe-aOU"/>
+                                    <constraint firstItem="KS6-33-lVp" firstAttribute="height" secondItem="Bpa-Xz-rJ1" secondAttribute="height" priority="750" id="ik9-tk-9ze"/>
+                                    <constraint firstAttribute="trailing" secondItem="KS6-33-lVp" secondAttribute="trailing" id="sJ1-bK-6PR"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Ycy-14-zbG"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="koO-bx-Zvh"/>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="JjQ-8p-Tmc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y6d-yA-uuY"/>
+                            <constraint firstItem="Bpa-Xz-rJ1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="8" id="HBJ-3H-Htb"/>
+                            <constraint firstItem="JjQ-8p-Tmc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RdT-v4-tMN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bpa-Xz-rJ1" secondAttribute="bottom" constant="8" id="XqT-On-CrT"/>
                             <constraint firstItem="JjQ-8p-Tmc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Yjr-Sm-DT3"/>
-                            <constraint firstItem="JjQ-8p-Tmc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ili-3d-jyg"/>
+                            <constraint firstItem="JjQ-8p-Tmc" firstAttribute="leading" secondItem="Bpa-Xz-rJ1" secondAttribute="trailing" constant="8" id="dih-lg-avt"/>
+                            <constraint firstItem="Bpa-Xz-rJ1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="djq-1B-QFH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JjQ-8p-Tmc" secondAttribute="bottom" id="itw-tC-fyM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -114,12 +298,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="112.3152709359606"/>
+            <point key="canvasLocation" x="1043.9280359820091" y="111.2"/>
         </scene>
     </scenes>
     <resources>
-        <image name="chalk" width="85.333335876464844" height="85.333335876464844"/>
-        <image name="eraser" width="100" height="100"/>
-        <image name="undo" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="chalk" width="128" height="128"/>
+        <image name="eraser" width="150" height="150"/>
+        <image name="settingsIcon" width="100" height="100"/>
+        <image name="undo" width="256" height="256"/>
     </resources>
 </document>
