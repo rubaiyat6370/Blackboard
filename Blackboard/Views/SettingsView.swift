@@ -16,7 +16,6 @@ class SettingsView: UIView {
     @IBOutlet weak var displayView: UIView!
     @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var lineWidthSlider: UISlider!
-
     @IBOutlet weak var opacitySlider: UISlider!
 
     weak var drawingDelegate: DrawingProtocol?

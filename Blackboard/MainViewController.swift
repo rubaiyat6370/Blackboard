@@ -18,27 +18,38 @@ class MainViewController: UIViewController {
     @IBOutlet weak var toolBarView: UIView!
     @IBOutlet weak var eraserButton: UIButton!
 
+    @IBOutlet weak var testView: UIView!
     //
     // MARK: - Variables
     //
+    let colorMap: [String: UIColor] = ["red": UIColor(red: 149.0/255.0, green: 136.0/255.0, blue: 29.0/255.0, alpha: 1.0), "black" : UIColor.black, "white": UIColor.white, "blue": UIColor(red: 9.0/255.0, green: 90.0/255.0, blue: 255.0/255.0, alpha: 1.0), "yellow": UIColor(red: 244.0/255.0, green: 224.0/255.0, blue: 3.0/255.0, alpha: 1.0), "lightGreen": UIColor(red: 238.0/255.0, green: 220.0/255.0, blue: 87.0/255.0, alpha: 1.0), "purple": UIColor(red: 55.0/255.0, green: 104.0/255.0, blue: 204.0/255.0, alpha: 1.0), "orange": UIColor(red: 180.0/255.0, green: 160.0/255.0, blue: 1.0/255.0, alpha: 1.0), "indigo": UIColor(red: 19.0/255.0, green: 99.0/255.0, blue: 215.0/255.0, alpha: 1.0), "pink": UIColor(red: 131.0/255.0, green: 141.0/255.0, blue: 181.0/255.0, alpha: 1.0), "skinLight": UIColor(red: 185.0/255.0, green: 173.0/255.0, blue: 84.0/255.0, alpha: 1.0), "darkGreen": UIColor(red: 110.0/255.0, green: 101.0/255.0, blue: 12.0/255.0, alpha: 1.0)]
 
     var startPoint: CGPoint? {
         didSet {
             if let point = startPoint {
-                previousPoint = point
-                drawPath.move(to: point)
+                if isValidPoint(point: point) {
+                    //previousPoint = point
+                    drawPath.move(to: point)
+                }
             }
         }
     }
-    var previousPoint: CGPoint?
+    //var previousPoint: CGPoint?
     var currentLayer: CAShapeLayer!
     var translationPoint: CGPoint? {
         didSet {
             if let point = translationPoint {
-                self.drawPath.addLine(to: point)
-                self.currentLayer.path = self.drawPath.cgPath
-                previousPoint = point
-                print(point)
+                if isValidPoint(point: point) {
+                    if !isValidPoint(point: drawPath.currentPoint) {
+                        drawPath.move(to: point)
+                    }
+                    self.drawPath.addLine(to: point)
+                    self.currentLayer.path = self.drawPath.cgPath
+                    //previousPoint = point
+                    print(point)
+                } else {
+                    drawPath.move(to: point)
+                }
             }
         }
     }
@@ -65,6 +76,16 @@ class MainViewController: UIViewController {
        self.toolBarView.layer.zPosition = CGFloat(Int.max)
        addPanGestureTo(view: self.toolBarView)
        setupSettingsView()
+
+        //test
+        self.testView.layer.masksToBounds = true
+    }
+
+    fileprivate func isValidPoint(point: CGPoint) -> Bool {
+        if testView.frame.contains(point) {
+            return true
+        }
+        return false
     }
 
     fileprivate func setupSettingsView() {
@@ -133,7 +154,7 @@ class MainViewController: UIViewController {
     //
 
     @IBAction func colorButtonPressed(_ sender: ColorButton) {
-        self.strokeColor = sender.fillColor
+        self.strokeColor =  sender.fillColor // colorMap[sender.colorName]!
         actionMode = 1
     }
 }
