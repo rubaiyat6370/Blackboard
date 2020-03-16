@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF67E46C241F1BEF00016F12 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67E46B241F1BEF00016F12 /* Canvas.swift */; };
 		BF7E91272407121F0024968A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E91262407121F0024968A /* AppDelegate.swift */; };
 		BF7E912B2407121F0024968A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E912A2407121F0024968A /* MainViewController.swift */; };
 		BF7E912E2407121F0024968A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7E912C2407121F0024968A /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF67E46B241F1BEF00016F12 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		BF7E91232407121F0024968A /* Blackboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blackboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7E91262407121F0024968A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF7E912A2407121F0024968A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				BF7E918124115B3F0024968A /* SettingsView.swift */,
 				BF7E9183241161160024968A /* SettingsView.xib */,
 				BF7E91872411A7A40024968A /* TestView.xib */,
+				BF67E46B241F1BEF00016F12 /* Canvas.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				BF7E917E241040450024968A /* Extensions.swift in Sources */,
 				BF7E91312407121F0024968A /* Blackboard.xcdatamodeld in Sources */,
 				BF7E912B2407121F0024968A /* MainViewController.swift in Sources */,
+				BF67E46C241F1BEF00016F12 /* Canvas.swift in Sources */,
 				BF7E918224115B3F0024968A /* SettingsView.swift in Sources */,
 				BF7E91272407121F0024968A /* AppDelegate.swift in Sources */,
 				BF7E918B24168A6A0024968A /* DrawingBox.swift in Sources */,

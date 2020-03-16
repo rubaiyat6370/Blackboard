@@ -89,21 +89,25 @@
                                             <constraint firstItem="GLF-ap-dyr" firstAttribute="top" secondItem="nhH-CW-Alv" secondAttribute="bottom" constant="8" id="yw9-sC-nAW"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5A7-J1-Y8V">
-                                        <rect key="frame" x="145.5" y="123.5" width="240" height="128"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLt-4C-rdS">
+                                        <rect key="frame" x="425" y="337" width="75" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="240" id="PyT-BZ-UE6"/>
-                                            <constraint firstAttribute="height" constant="128" id="Y2Y-SA-cl9"/>
+                                            <constraint firstAttribute="height" constant="30" id="c6k-3C-x2m"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="n0r-Wi-5Nq"/>
                                         </constraints>
-                                    </view>
+                                        <state key="normal" title="TestButton"/>
+                                        <connections>
+                                            <action selector="colorMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mA0-tX-rwp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="eLt-4C-rdS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JjQ-8p-Tmc" secondAttribute="leading" constant="20" symbolic="YES" id="CLm-xG-siq"/>
                                     <constraint firstAttribute="trailing" secondItem="ns3-DY-kSZ" secondAttribute="trailing" constant="8" id="COZ-K8-Dtj"/>
+                                    <constraint firstAttribute="trailing" secondItem="eLt-4C-rdS" secondAttribute="trailing" constant="31" id="J4K-Zb-WHx"/>
                                     <constraint firstItem="ns3-DY-kSZ" firstAttribute="top" secondItem="JjQ-8p-Tmc" secondAttribute="top" constant="8" id="aid-ee-VFe"/>
-                                    <constraint firstItem="5A7-J1-Y8V" firstAttribute="centerX" secondItem="JjQ-8p-Tmc" secondAttribute="centerX" id="pOO-Zg-U56"/>
-                                    <constraint firstItem="5A7-J1-Y8V" firstAttribute="centerY" secondItem="JjQ-8p-Tmc" secondAttribute="centerY" id="z3u-A8-R1X"/>
+                                    <constraint firstItem="eLt-4C-rdS" firstAttribute="top" secondItem="ns3-DY-kSZ" secondAttribute="bottom" constant="17" id="ggh-M4-qyW"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bpa-Xz-rJ1">
@@ -314,8 +318,6 @@
                     <navigationItem key="navigationItem" id="9im-z3-xPR"/>
                     <connections>
                         <outlet property="boardView" destination="JjQ-8p-Tmc" id="33T-Tf-xtp"/>
-                        <outlet property="eraserButton" destination="rlI-Wj-qpR" id="dri-7r-nIB"/>
-                        <outlet property="testView" destination="5A7-J1-Y8V" id="2ul-TN-7YL"/>
                         <outlet property="toolBarView" destination="ns3-DY-kSZ" id="3LQ-Pq-ctO"/>
                     </connections>
                 </viewController>
